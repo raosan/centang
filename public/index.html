@@ -17,6 +17,7 @@
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="/__/firebase/8.0.0/firebase-messaging.js"></script>
 
   <!-- Initialize Firebase -->
   <script src="/__/firebase/init.js"></script>
@@ -28,5 +29,19 @@
               console.log('Service Worker Registered');
         });
     }
+  </script>
+  <script>
+    const messaging = firebase.messaging();
+    messaging.requestPermission()
+    .then(function() {
+      console.log('Notification permission granted.');
+      return messaging.getToken();
+    })
+    .then(function(token) {
+      console.log(token);
+    })
+    .catch(function(err) {
+      console.log('Unable to get permission to notify.', err);
+    })
   </script>
 </html>
