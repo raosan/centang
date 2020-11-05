@@ -1,8 +1,9 @@
-var cacheName = 'centang';
+var cacheName = 'centang-v1';
 var filesToCache = [
   '/',
   '/index.html',
-  '/style.css',
+  '/css/style.css',
+  '/js/app.js',
 ];
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');

@@ -5,11 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Centang | Simple todo app</title>
-    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
     <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-status-bar" content="#7ccd4c" />
+    <meta name="theme-color" content="#7ccd4c" />
   </head>
   <body>
-    <h1 class="vertical-container">Hello World</h1>
+    <main>
+      <nav>
+        <h1>Centang</h1>
+      </nav>
+      <div class="container"></div>
+    </main>
+    <script src="js/app.js"></script>
   </body>
   
   <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -24,7 +32,7 @@
 
   <script>
     if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
+      navigator.serviceWorker.register('js/sw.js')
         .then(function() {
               console.log('Service Worker Registered');
         });
